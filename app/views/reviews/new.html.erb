@@ -1,1 +1,9 @@
-new.html.erb
+<div class="container">
+  <h2>Add a review :</h2>
+  <%= simple_form_for [@restaurant, @review] do |f| %>
+    <%= f.input :content %>
+    <%= f.input :rating %>
+    <%= f.submit "Add your review and your ratting between 0 and 5" , class: "btn btn-primary" %>
+  <% end %>
+</div>
+

@@ -1,1 +1,12 @@
-index.html.erb
+<div class="container">
+  <h1>ALL RESTAURANTS</h1>
+
+  <ul class="list-inline">
+    <% @restaurants.each do |restaurant| %>
+      <li><%= link_to restaurant.name, restaurant_path(restaurant)  %></li>
+    <% end %>
+  </ul>
+  <hr>
+<%= link_to 'Add a new restaurant to your list', new_restaurant_path  %>
+</div>
+

@@ -1,1 +1,24 @@
-show.html.erb
+<div class="container">
+  <h1><%= @restaurant.name %></h1>
+
+  <hr>
+  <h3>Informations</h3>
+  <ul class="list-inline">
+    <li>Address : <%= @restaurant.address %></li>
+    <li>Phone number : <%= @restaurant.phone_number %></li>
+    <li>Category : <%= @restaurant.category %></li>
+    <li>Average rating : <%= "⭐️"*(@average)%></li>
+  </ul>
+
+
+  <h3>Reviews</h3>
+  <div>
+    <% @restaurant.reviews.each do |review| %>
+     <li class="list-inline"> - <%= review.content %> <%= "⭐️"*(review.rating) %></li>
+    <% end %>
+  </div>
+  <%= link_to 'Add a review for this restaurant', new_restaurant_review_path(@restaurant)  %>
+
+  <hr>
+  <%= link_to 'Go back to the restaurant list', restaurants_path  %>
+</div>
